@@ -126,4 +126,7 @@ Enter these rules into your Prolog source code. Following the book’s example e
 
 For check off, demonstrate to the instructor that you have implemented the example from the textbook, and execute a trace to determine if N is fact.
 
-Do not forget to upload your source code files to Moodle.
+#### Tips
+
+* The book example is actually in propositional logic, not first order logic. You will need to create a dummy function for each term. For example: `item(y)`.
+* Do not forget to upload your source code files to Moodle.
