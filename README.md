@@ -85,5 +85,48 @@ We know for a fact that ‘a’ is an ‘orange’, so it can’t be true accord
 
 gprolog should respond with the following result: 
 
-Y = albert
+> Y = albert 
 
+It may seem like gprolog has hung at this point, but it is actually stepping through all objects which cause `full(Y)` to evaluate to true. To step through to the next object you must enter a semicolon, your screen output will look like this: 
+
+> Y = albert ;
+
+> no
+
+There were no other ground terms that satisfied `full(Y)`. Jane ate a salad, not a hamburger. This brief introduction should be all that is needed to complete the lab. For a glimpse into a more advanced Prolog program, here is an implementation of recursive factorial:
+
+```prolog
+factorial(0,1). 
+factorial(N,F) :-  
+   N>0,
+   N1 is N-1,
+   factorial(N1,F1),
+   F is N * F1.
+```
+
+Note that since clauses are ordered the antecedent can be written as if we were programming in an imperative language.
+
+### Tracing a Sentence
+
+Read recommended reading item #2 on how to trace a Prolog program.
+
+## Technical Approach
+
+### Inference Example from Textbook
+
+To write a program in Prolog you will write your code in vi or emacs and then use gprolog to execute your code. Prolog code usually has the extension .pro or .pl. The following rules were discussed in Section 2.6.1 of the text:
+
+* IF Y AND D THEN Z
+* IF X AND B AND E THEN Y
+* IF A THEN X
+* IF C THEN L
+* IF L AND M THEN N
+
+Enter these rules into your Prolog source code. Following the book’s example enter A, B, C, D and E as fact. Verify that all objects are fact except for N *using trace*. Be sure that you understand how backward chaining is being executed.
+
+For check off, demonstrate to the instructor that you have implemented the example from the textbook, and execute a trace to determine if N is fact.
+
+#### Tips
+
+* The book example is actually in propositional logic, not first order logic. You will need to create a dummy function for each term. For example: `item(y)`.
+* Do not forget to upload your source code files to Moodle.
