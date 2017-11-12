@@ -89,7 +89,7 @@ gprolog should respond with the following result:
 
 It may seem like gprolog has hung at this point, but it is actually stepping through all objects which cause `full(Y)` to evaluate to true. To step through to the next object you must enter a semicolon, your screen output will look like this: 
 
-> Y = albert 
+> Y = albert ;
 
 > no
 
