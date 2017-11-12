@@ -21,4 +21,4 @@ hamburger(X) :- color(X,tan), shape(X,round).
 % An object is an orange if it is orange and round.
 orange(X) :- color(X,orange), shape(X,round).
 % I don't know about you, but a hamburger is pretty filling...
-full(X) :- ate(X, hamburger).
+full(X) :- ate(X, Y), hamburger(Y).
