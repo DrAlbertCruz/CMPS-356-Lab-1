@@ -80,3 +80,10 @@ which attempts to prove that ‘a’ is a 'orange’ according to the rule estab
 > false.
 
 We know for a fact that ‘a’ is an ‘orange’, so it can’t be true according to our rule. A non-ground query is a query invocation with a variable in it. Recall that variables start with an uppercase letter. 
+
+> ?- full(Y).
+
+gprolog should respond with the following result: 
+
+Y = albert
+
