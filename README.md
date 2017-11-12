@@ -65,3 +65,18 @@ Rules are encoded with the consequent first, followed by the operator `:-`, then
   
 The first rule is interpreted as: If the 'color' of some object 'X' is 'tan' and it's 'shape' is 'round', then 'X' is a hamburger. The second rule is read as, if 'X' ate a 'hamburger' specifically, then 'X' is full. Invoking `full(X).` during runtime will check for all objects in the database that ate a hamburger. If you invoke full(jill) it will check if jill ate a hamburger. This is how you will implement queries in Prolog.
 
+### Queries
+
+When you are done looking at example.pl, quit your text editor and then run gprolog and consult your source code (see above for the command to do this). To check if a rule has been proven (e.g. it has fired/it is true/it is in the database) invoke the following command:
+
+> | ?- orange(a).
+
+> true.
+
+which attempts to prove that ‘a’ is a 'orange’ according to the rule established in example.pl. Since ‘color’ is ‘red’ is fact, the rule `fruit(apple) :- color(red).` will always be true. This is an example of a ground query. To check if an object is full: 
+
+> | ?- hamburger(a).
+
+> false.
+
+We know for a fact that ‘a’ is an ‘orange’, so it can’t be true according to our rule. A non-ground query is a query invocation with a variable in it. Recall that variables start with an uppercase letter. 
