@@ -130,3 +130,8 @@ For check off, demonstrate to the instructor that you have implemented the examp
 
 * The book example is actually in propositional logic, not first order logic. You will need to create a dummy function for each term. For example: `item(y)`.
 * Do not forget to upload your source code files to Moodle.
+
+## Requirements for Check Off
+
+* This lab must be checked off in person
+* For full credit, show the instructor your Prolog source code and demonstrate inference in Prolog
