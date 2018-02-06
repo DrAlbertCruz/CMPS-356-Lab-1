@@ -79,7 +79,7 @@ This is an example of a ground query. We happen to know that the 'color' of 'a' 
 
 > true.
 
-This attempts to prove that ‘a’ is a 'orange’ according to the rule established in example.pl. Since `color(a,orange).` is fact, and `shape(a,round).` is fact, the rule `orange(X) :- color(X,orange), shape(X,round).` will always be satisfied. Note that we did not enter that 'a' is an 'orange' explicitly, the Prolog inference engine is using inference to discover facts that were not explicitly given in your Prolog source file. Consider if it us a hamburger: 
+This attempts to prove that ‘a’ is a 'orange’ according to the rule established in example.pl. Since `color(a,orange).` is fact, and `shape(a,round).` is fact, the rule `orange(X) :- color(X,orange), shape(X,round).` will be satisfied for `X=a`. Note that we did not enter that 'a' is an 'orange' explicitly, the Prolog inference engine is using inference to discover facts that were not explicitly given in your Prolog source file. Consider if it us a hamburger: 
 
 > | ?- hamburger(a).
 
