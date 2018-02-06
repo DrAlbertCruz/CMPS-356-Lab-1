@@ -69,17 +69,25 @@ The first rule is interpreted as: If the 'color' of some object 'X' is 'tan' and
 
 When you are done looking at example.pl, quit your text editor and then run gprolog and consult your source code (see above for the command to do this). To check if a rule has been proven (e.g. it has fired/it is true/it is in the database) invoke the following command:
 
+> | ?- color(a,orange).
+
+> true.
+
+This is an example of a ground query. We happen to know that the 'color' of 'a' is 'orange' because we explicitly gave it as a fact. Now try:
+
 > | ?- orange(a).
 
 > true.
 
-which attempts to prove that ‘a’ is a 'orange’ according to the rule established in example.pl. Since ‘color’ is ‘red’ is fact, the rule `fruit(apple) :- color(red).` will always be true. This is an example of a ground query. To check if an object is full: 
+This attempts to prove that ‘a’ is a 'orange’ according to the rule established in example.pl. Since `color(a,orange).` is fact, and `shape(a,round).` is fact, the rule `orange(X) :- color(X,orange), shape(X,round).` will always be satisfied. Note that we did not enter that 'a' is an 'orange' explicitly, the Prolog inference engine is using inference to discover facts that were not explicitly given in your Prolog source file. Consider if it us a hamburger: 
 
 > | ?- hamburger(a).
 
 > false.
 
-We know for a fact that ‘a’ is an ‘orange’, so it can’t be true according to our rule. A non-ground query is a query invocation with a variable in it. Recall that variables start with an uppercase letter. 
+We know for a fact that ‘a’ is an ‘orange’. The first term for checking is an item is a hamburger checks if the 'color' is 'tan', which is false for 'a'. Prolog visits each clause in a left-to-right fashion, carrying out a DFS search on each clause. If a term comes up false, it halts the inference and returns false. 
+
+A non-ground query is a query invocation with a variable in it. Recall that variables start with an uppercase letter. 
 
 > ?- full(Y).
 
